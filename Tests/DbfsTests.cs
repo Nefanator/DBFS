@@ -1,10 +1,8 @@
 using DatabaseWrapper;
 using DatabaseWrapper.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.IO;
 using System.Linq;
 
 namespace Tests
@@ -31,7 +29,7 @@ Integrated Security=True;";
         }
 
         [TestMethod, TestCategory("Integration"), DoNotParallelize]
-        public void Item()
+        public void WriteUser_WriteItem_ReadItem()
         {
             var user = _users.Create("Jim");
             var ball = _items.CreateBall(user, "/", "Red", 4);

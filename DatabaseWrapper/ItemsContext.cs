@@ -1,6 +1,5 @@
 ﻿using Dapper;
 using DatabaseWrapper.Models;
-using System;
 using System.Collections.Generic;
 using System.Data;
 

@@ -74,10 +74,7 @@ namespace DatabaseWrapper.Models
         /// <inheritdoc/>
         public override int GetHashCode()
         {
-            return Id.GetHashCode()
-                ^ Path.GetHashCode()
-                ^ Type.GetHashCode()
-                ^ Owner.GetHashCode();
+            return HashCode.Combine(Id, Path, Type, Owner);
         }
     }
 }

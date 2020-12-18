@@ -37,7 +37,7 @@ namespace DatabaseWrapper.Models
 
         public override int GetHashCode()
         {
-            return base.GetHashCode() ^ Colour.GetHashCode() ^ Size.GetHashCode();
+            return (Metadata, Colour, Size).GetHashCode();
         }
     }
 }
