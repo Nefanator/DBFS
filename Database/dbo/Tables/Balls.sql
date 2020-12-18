@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Balls]
+(
+	[Id] INT NOT NULL PRIMARY KEY,
+	[Colour] varchar(20) NOT NULL,
+	[Size] INT NOT NULL, 
+    CONSTRAINT [FK_Balls_ToTable] FOREIGN KEY ([Id]) REFERENCES [Items]([Id]) ON DELETE CASCADE ON UPDATE CASCADE
+)

@@ -1,0 +1,4 @@
+﻿CREATE PROCEDURE [dbo].[ReadUsers]
+AS
+	SELECT * FROM Users
+GO
