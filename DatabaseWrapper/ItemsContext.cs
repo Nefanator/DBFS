@@ -77,6 +77,11 @@ namespace DatabaseWrapper
             return item;
         }
 
+        //public Item Read(ItemMetadata metadata)
+        //{
+
+        //}
+
         public void Update(ItemMetadata item)
         {
             _connection.Execute(

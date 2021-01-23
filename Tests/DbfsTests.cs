@@ -33,12 +33,20 @@ Integrated Security=True;";
         {
             var user = _users.Create("Jim");
             var ball = _items.CreateBall(user, "/", "Red", 4);
+            var ball1 = _items.CreateBall(user, "/foo/", "Red", 3);
+            var ball2 = _items.CreateBall(user, "/foo/bar", "Purple", 4);
 
-            var itemMetadata = _items.ReadMetadata(user, "/").Single();
+            var itemMetadata = _items.ReadMetadata(user, "/foo/").Single();
 
-            var item = _items.Read<Ball>(itemMetadata);
+            _items.Delete(itemMetadata);
 
-            Assert.AreEqual(ball, item);
+            var allItems = _items.ReadMetadata(user, "%");
+
+            //_dir.Delete(user, "/SubFolder/");
+
+            //var item = _items.Read<Ball>(itemMetadata);
+
+            //Assert.AreEqual(ball, item);
         }
     }
 }
